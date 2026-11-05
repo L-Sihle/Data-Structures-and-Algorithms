@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class HashLab {
     private static final Scanner INPUT = new Scanner(System.in);
     private static final int EMPTY = 0, OCCUPIED = 1, DELETED = 2;
-
     private static class Node {
         int key;
         Node next;
         Node(int key, Node next) { this.key = key; this.next = next; }
     }
+    
     private static class Table {
         final int size;
         Node[] chains;
@@ -133,7 +133,7 @@ public class HashLab {
         void stats() {
             System.out.println("\nTable size: " + size + ", keys: " + count);
             System.out.printf("Load factor (open addressing): %.2f%%%n", 100.0 * count / size);
-            System.out.println("                       Collisions     Probe attempts");
+            System.out.println("                       Collisions     Probe attempts");                //Trust me to do manual alignment ;) 
             System.out.printf("Separate chaining      %-14d %d%n", chainCollisions, chainProbes);
             System.out.printf("Linear probing         %-14d %d%n", linearCollisions, linearProbes);
             System.out.printf("Double hashing         %-14d %d%n", doubleCollisions, doubleProbes);
@@ -163,7 +163,7 @@ public class HashLab {
         }
     }
     private static void menu() {
-        System.out.println("\n                HashLab                ");
+        System.out.println("\n                HashLab");
         System.out.println("1) Insert one key");
         System.out.println("2) Insert several keys");
         System.out.println("3) Search for a key");
@@ -172,7 +172,7 @@ public class HashLab {
         System.out.println("6) Statistics");
         System.out.println("7) Reset with a new table size");
         System.out.println("8) Exit");
-        System.out.println("=========================================");
+        System.out.println(" ");
     }
     public static void main(String[] args) {
         System.out.println("Welcome to HashLab!");
